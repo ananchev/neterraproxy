@@ -1,0 +1,33 @@
+{
+	"demo_mode": 0,
+	"product_service_name": "live",
+	"product_tag": "bnt1",
+	"media_tag": "bnt1",
+	"product_method": "LIVE",
+	"quality_id": "25",
+	"type": 1,
+	"play_link": "http://cs-sof1.neterra.tv:443/dvr/bnt1/0/60/playlist.m3u8?h=6lmiXF4jR",
+	"issue_name": "bnt1_live.stream",
+	"logged": true,
+	"demo_wmv": 0,
+	"live": "1",
+	"show_test_message": false,
+	"product_service": "1",
+	"demo_length": 14400,
+	"cs": true,
+	"dvr_duration": "43200",
+	"player_menu": [{
+		"index": 0,
+		"quality": 25,
+		"id": "130325",
+		"label": "▶ Високо качество"
+	},
+	{
+		"index": 1,
+		"quality": 15,
+		"id": "130325",
+		"label": "Средно качество"
+	}],
+	"file_link": "bnt1.smil",
+	"prod_name": "БНТ1"
+}
