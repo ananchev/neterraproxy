@@ -73,9 +73,9 @@ class NeterraProxy(object):
             .format(tvg_id, tvg_name,'',group_id,issues_name,self.host,issues_id,tvg_name)
             sb.write(chdata.encode("utf-8"))
         
-        import io
-        with io.open('playlist.m3u8', 'w', encoding='utf8') as text_file:
-            text_file.write(unicode(str(sb)))
+        # import io
+        # with io.open('playlist.m3u8', 'w', encoding='utf8') as text_file:
+        #     text_file.write(unicode(str(sb)))
         
         return sb.getvalue()     
 
@@ -85,19 +85,20 @@ class NeterraProxy(object):
         data = {'issue_id':issueId, 'quality':'0', 'type':'live'}
         sr = self.session.post('http://www.neterra.tv/content/get_stream', data=data)
         
-        playLinkJson = sr.json()
-        import json, io
-        with io.open('playLinkJson.json','w',encoding="utf-8") as outfile:
-            outfile.write(unicode(json.dumps(playLinkJson, ensure_ascii=False)))
+        # playLinkJson = sr.json()
+        # import json, io
+        # with io.open('playLinkJson.json','w',encoding="utf-8") as outfile:
+        #     outfile.write(unicode(json.dumps(playLinkJson, ensure_ascii=False)))
         
         return sr.json()
 
     def getPlayLink(self, issueId):
         playLinkJson = self.__getStream(issueId)
         raw_link = playLinkJson['play_link']
-        #Cleanup DVR features in live stream that were causing problems for some channels
-        clean_link = raw_link.replace(':443','').replace('DVR&','').replace('/dvr','/live')
-        return clean_link
+        # #Cleanup DVR features in live stream that were causing problems for some channels
+        # clean_link = raw_link.replace(':443','').replace('DVR&','').replace('/dvr','/live')
+        # return clean_link
+        return raw_link
 
 
 

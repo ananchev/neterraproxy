@@ -54,11 +54,15 @@ class NeterraMiddlware:
             if len(query)==0:
                 #fresh authentication every time playlist is served         
                 if self.net.authenticate():
-                    logger.info('Now serving playlist')                
+                    logger.info('Now serving playlist')
+                    print('Now serving playlist')                
                     status = '200 OK'
                     response = self.net.getM3U8()
                     response_headers = [('Content-Type', 'application/x-mpegURL'),\
                                         ('Content-Disposition', 'attachment; filename=\"playlist.m3u8\"')]
+                    # status = '302 Found'                
+                    # response = ""     
+                    # response_headers = [('Content-Type', 'application/x-mpegURL'),('Location', 'http://www.dir.bg')
                 else:
                     logger.info('Failed to login. Check username and password.')
             else:
@@ -67,12 +71,13 @@ class NeterraMiddlware:
                 chn = param_dict.get('name', [''])[0] #Returns channel name
                 chlink = self.net.getPlayLink(ch)
                 logger.info(('serving stream of channel \"{0}\" with id:\"{2}. The link is: \"{1}\".').format(chn, chlink, ch)) 
-                #status = '302 Found'                
-                #response = ""     
-                #response_headers = [('Content-Type', 'application/x-mpegURL'),('Location', str(chlink))]
-                status = '200 OK'
-                response = 'the link to play channel {0} is \"{1}\".'.format(chn, chlink) 
-                response_headers = [('Content-Type', 'text/plain'),('Content-Length', str(len(response)))]
+                print(('serving stream of channel \"{0}\" with id:\"{2}. The link is: \"{1}\".').format(chn, chlink, ch))
+                status = '302 Found'                
+                response = ""     
+                response_headers = [('Content-Type', 'application/x-mpegURL'),('Location', str(chlink))]
+                # status = '200 OK'
+                # response = 'the link to play channel {0} is \"{1}\".'.format(chn, chlink) 
+                # response_headers = [('Content-Type', 'text/plain'),('Content-Length', str(len(response)))]
         else:
             response='return error for wrong call here'
             logger.debug('server was called with wrong argument: {0}'.format(environ['PATH_INFO']))
