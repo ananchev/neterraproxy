@@ -1,0 +1,19 @@
+INFO	07/24/2018 08:21:06 PM root		EPG downloader initialised: 2018-07-24 20:21:06.201063
+INFO	07/24/2018 08:21:28 PM root		EPG downloader initialised: 2018-07-24 20:21:28.898693
+INFO	07/24/2018 08:21:29 PM apscheduler.scheduler		Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO	07/24/2018 08:21:29 PM apscheduler.scheduler		Added job "EPGDownloader.extract" to job store "default"
+INFO	07/24/2018 08:21:29 PM apscheduler.scheduler		Scheduler started
+DEBUG	07/24/2018 08:21:29 PM apscheduler.scheduler		Looking for jobs to run
+DEBUG	07/24/2018 08:21:29 PM apscheduler.scheduler		Next wakeup is due at 2018-07-25 00:21:29.380560+02:00 (in 14399.993790 seconds)
+INFO	07/24/2018 08:21:31 PM apscheduler.scheduler		Scheduler has been shut down
+DEBUG	07/24/2018 08:21:31 PM apscheduler.scheduler		Looking for jobs to run
+DEBUG	07/24/2018 08:21:31 PM apscheduler.scheduler		No jobs; waiting until a job is added
+INFO	07/24/2018 08:26:25 PM root		EPG downloader initialised: 2018-07-24 20:26:25.929390
+INFO	07/24/2018 08:26:26 PM apscheduler.scheduler		Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO	07/24/2018 08:26:26 PM apscheduler.scheduler		Added job "EPGDownloader.extract" to job store "default"
+INFO	07/24/2018 08:26:26 PM apscheduler.scheduler		Scheduler started
+DEBUG	07/24/2018 08:26:26 PM apscheduler.scheduler		Looking for jobs to run
+DEBUG	07/24/2018 08:26:26 PM apscheduler.scheduler		Next wakeup is due at 2018-07-25 00:26:26.326893+02:00 (in 14399.992785 seconds)
+INFO	07/24/2018 08:26:45 PM apscheduler.scheduler		Scheduler has been shut down
+DEBUG	07/24/2018 08:26:45 PM apscheduler.scheduler		Looking for jobs to run
+DEBUG	07/24/2018 08:26:45 PM apscheduler.scheduler		No jobs; waiting until a job is added
