@@ -1,14 +1,12 @@
-#!/usr/bin/python2
+#!/usr/bin/python
 
 #logger definitions
 import os
 #from os.path import expanduser
 #logpath = os.path.join(expanduser("~"), r"neterra.log")
-script_dir = os.path.dirname(os.path.abspath(__file__))
-logpath = script_dir + '/neterra.log'
-#logpath = "/tmp/mnt/disc0-part4/neterra_proxy/neterra.log"
+#script_dir = os.path.dirname(os.path.abspath(__file__))
+
 import logging
-logging.basicConfig(filename=logpath, level=logging.DEBUG, format='%(levelname)s\t%(asctime)s %(name)s\t\t%(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
 logger = logging.getLogger("wsrv.py")
 
 from urlparse import parse_qs
@@ -23,9 +21,11 @@ class Wsrv:
     
 class NeterraMiddlware:
     
-    def __init__(self, app):
+    def __init__(self, app, username, password, app_dir):
         self.app = app
-        self.net = neterra.NeterraProxy()
+        #script_dir = os.path.dirname(os.path.abspath(__file__))
+        self.net = neterra.NeterraProxy(username, password, app_dir)
+        #self.net.script_dir = self.script_dir = os.path.dirname(os.path.abspath(__file__))
        
 #     def __call__(self, environ, start_response):  #this is a method to output the whole environment dictionary   
 #         # Sorting and stringifying the environment key, value pairs
@@ -48,7 +48,7 @@ class NeterraMiddlware:
         
         if call in ['epg.xml']:
             logging.info('serving EPG')
-            h = open(self.net.script_dir + "/epg.xml")
+            h = open(self.net.app_dir + "/epg.xml")
             response= h.read()
             h.close()
             status = '200 OK'
@@ -100,26 +100,32 @@ class NeterraMiddlware:
         start_response(status, response_headers)   
         return [response]
 
-def tick():
-    from datetime import datetime
-    import time
-    import os
-    print('Tick! The time is: %s' % datetime.now())    
-    
-if __name__ == "__main__":
-    d = downloadepg.EPGDownloader()
-    from apscheduler.schedulers.background import BackgroundScheduler
-    scheduler = BackgroundScheduler()
-    scheduler.add_job(d.extract, 'interval', hours=4)
-    scheduler.start()
-    print('Press Ctrl+{0} to exit'.format('Break' if os.name == 'nt' else 'C'))
+def run(username, password, app_dir):
+    logpath = app_dir + '/neterra.log'
+    #logpath = "/tmp/mnt/disc0-part4/neterra_proxy/neterra.log"
+    import logging
+    logging.basicConfig(filename=logpath, level=logging.DEBUG, format='%(levelname)s\t%(asctime)s %(name)s\t\t%(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
+    logger = logging.getLogger("wsrv.py")
 
     try:
+        d = downloadepg.EPGDownloader(app_dir)
+        from apscheduler.schedulers.background import BackgroundScheduler
+        scheduler = BackgroundScheduler()
+        scheduler.add_job(d.extract, 'interval', hours=4)
+        scheduler.start()
+
         from wsgiref.simple_server import make_server
-        application = NeterraMiddlware(Wsrv())
+        application = NeterraMiddlware(Wsrv(), username, password, app_dir)
         httpd = make_server('', 8080, application)
-        print('Serving on port 8080...')
+        logger.debug('Serving on port 8080...')
         httpd.serve_forever()
+
+        while True:
+            pass
     except KeyboardInterrupt:
+        logger.debug('Shut down command received')
         scheduler.shutdown()
-        print('Goodbye.')
+
+   
+# if __name__ == "__main__":
+#     run()

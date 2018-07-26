@@ -17,3 +17,76 @@ DEBUG	07/24/2018 08:26:26 PM apscheduler.scheduler		Next wakeup is due at 2018-0
 INFO	07/24/2018 08:26:45 PM apscheduler.scheduler		Scheduler has been shut down
 DEBUG	07/24/2018 08:26:45 PM apscheduler.scheduler		Looking for jobs to run
 DEBUG	07/24/2018 08:26:45 PM apscheduler.scheduler		No jobs; waiting until a job is added
+INFO	07/24/2018 09:17:00 PM root		EPG downloader initialised: 2018-07-24 21:17:00.006323
+INFO	07/24/2018 09:17:00 PM apscheduler.scheduler		Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO	07/24/2018 09:17:00 PM apscheduler.scheduler		Added job "EPGDownloader.extract" to job store "default"
+INFO	07/24/2018 09:17:00 PM apscheduler.scheduler		Scheduler started
+DEBUG	07/24/2018 09:17:00 PM apscheduler.scheduler		Looking for jobs to run
+DEBUG	07/24/2018 09:17:00 PM apscheduler.scheduler		Next wakeup is due at 2018-07-25 01:17:00.517403+02:00 (in 14399.994564 seconds)
+INFO	07/24/2018 09:20:45 PM root		EPG downloader initialised: 2018-07-24 21:20:45.112999
+INFO	07/24/2018 09:20:45 PM apscheduler.scheduler		Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO	07/24/2018 09:20:45 PM apscheduler.scheduler		Added job "EPGDownloader.extract" to job store "default"
+INFO	07/24/2018 09:20:45 PM apscheduler.scheduler		Scheduler started
+DEBUG	07/24/2018 09:20:45 PM apscheduler.scheduler		Looking for jobs to run
+DEBUG	07/24/2018 09:20:45 PM apscheduler.scheduler		Next wakeup is due at 2018-07-25 01:20:45.608139+02:00 (in 14399.984474 seconds)
+DEBUG	07/24/2018 09:21:19 PM wsrv.py		server was called with wrong argument: /
+DEBUG	07/24/2018 09:21:20 PM wsrv.py		server was called with wrong argument: /favicon.ico
+INFO	07/24/2018 09:21:27 PM apscheduler.scheduler		Scheduler has been shut down
+DEBUG	07/24/2018 09:21:27 PM apscheduler.scheduler		Looking for jobs to run
+DEBUG	07/24/2018 09:21:27 PM apscheduler.scheduler		No jobs; waiting until a job is added
+INFO	07/24/2018 09:23:29 PM root		EPG downloader initialised: 2018-07-24 21:23:29.003892
+INFO	07/24/2018 09:23:29 PM apscheduler.scheduler		Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO	07/24/2018 09:23:29 PM apscheduler.scheduler		Added job "EPGDownloader.extract" to job store "default"
+INFO	07/24/2018 09:23:29 PM apscheduler.scheduler		Scheduler started
+DEBUG	07/24/2018 09:23:29 PM apscheduler.scheduler		Looking for jobs to run
+DEBUG	07/24/2018 09:23:29 PM wsrv.py		Serving on port 8080...
+DEBUG	07/24/2018 09:23:29 PM apscheduler.scheduler		Next wakeup is due at 2018-07-25 01:23:29.397492+02:00 (in 14399.987350 seconds)
+DEBUG	07/24/2018 09:23:50 PM wsrv.py		Shut down command received
+INFO	07/24/2018 09:23:50 PM apscheduler.scheduler		Scheduler has been shut down
+DEBUG	07/24/2018 09:23:50 PM apscheduler.scheduler		Looking for jobs to run
+DEBUG	07/24/2018 09:23:50 PM apscheduler.scheduler		No jobs; waiting until a job is added
+DEBUG	07/24/2018 10:29:33 PM wsrv.py		Serving on port 8080...
+DEBUG	07/24/2018 10:29:39 PM wsrv.py		Shut down command received
+INFO	07/24/2018 10:32:33 PM root		EPG downloader initialised: 2018-07-24 22:32:33.420210
+INFO	07/24/2018 10:32:33 PM apscheduler.scheduler		Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO	07/24/2018 10:32:33 PM apscheduler.scheduler		Added job "EPGDownloader.extract" to job store "default"
+INFO	07/24/2018 10:32:33 PM apscheduler.scheduler		Scheduler started
+DEBUG	07/24/2018 10:32:33 PM wsrv.py		Serving on port 8080...
+DEBUG	07/24/2018 10:32:33 PM apscheduler.scheduler		Looking for jobs to run
+DEBUG	07/24/2018 10:32:33 PM apscheduler.scheduler		Next wakeup is due at 2018-07-25 02:32:33.845414+02:00 (in 14399.990649 seconds)
+DEBUG	07/24/2018 10:32:38 PM wsrv.py		Shut down command received
+INFO	07/24/2018 10:32:38 PM apscheduler.scheduler		Scheduler has been shut down
+DEBUG	07/24/2018 10:32:38 PM apscheduler.scheduler		Looking for jobs to run
+DEBUG	07/24/2018 10:32:38 PM apscheduler.scheduler		No jobs; waiting until a job is added
+INFO	07/24/2018 10:53:42 PM root		EPG downloader initialised: 2018-07-24 22:53:42.548792
+INFO	07/24/2018 10:53:43 PM apscheduler.scheduler		Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO	07/24/2018 10:53:43 PM apscheduler.scheduler		Added job "EPGDownloader.extract" to job store "default"
+INFO	07/24/2018 10:53:43 PM apscheduler.scheduler		Scheduler started
+INFO	07/24/2018 10:57:35 PM root		EPG downloader initialised: 2018-07-24 22:57:35.904287
+INFO	07/24/2018 10:57:36 PM apscheduler.scheduler		Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO	07/24/2018 10:57:36 PM apscheduler.scheduler		Added job "EPGDownloader.extract" to job store "default"
+INFO	07/24/2018 10:57:36 PM apscheduler.scheduler		Scheduler started
+INFO	07/24/2018 11:01:35 PM root		EPG downloader initialised: 2018-07-24 23:01:35.981952
+INFO	07/24/2018 11:01:36 PM apscheduler.scheduler		Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO	07/24/2018 11:01:36 PM apscheduler.scheduler		Added job "EPGDownloader.extract" to job store "default"
+INFO	07/24/2018 11:01:36 PM apscheduler.scheduler		Scheduler started
+DEBUG	07/24/2018 11:01:36 PM apscheduler.scheduler		Looking for jobs to run
+DEBUG	07/24/2018 11:01:36 PM apscheduler.scheduler		Next wakeup is due at 2018-07-25 03:01:36.398856+02:00 (in 14399.992426 seconds)
+DEBUG	07/24/2018 11:01:36 PM wsrv.py		Serving on port 8080...
+DEBUG	07/24/2018 11:01:56 PM wsrv.py		server was called with wrong argument: /
+DEBUG	07/24/2018 11:01:57 PM wsrv.py		server was called with wrong argument: /favicon.ico
+DEBUG	07/24/2018 11:02:01 PM wsrv.py		Shut down command received
+INFO	07/24/2018 11:02:01 PM apscheduler.scheduler		Scheduler has been shut down
+DEBUG	07/24/2018 11:02:01 PM apscheduler.scheduler		Looking for jobs to run
+DEBUG	07/24/2018 11:02:01 PM apscheduler.scheduler		No jobs; waiting until a job is added
+INFO	07/25/2018 09:01:49 PM root		EPG downloader initialised: 2018-07-25 21:01:49.437722
+INFO	07/25/2018 09:01:49 PM apscheduler.scheduler		Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO	07/25/2018 09:01:49 PM apscheduler.scheduler		Added job "EPGDownloader.extract" to job store "default"
+INFO	07/25/2018 09:01:49 PM apscheduler.scheduler		Scheduler started
+DEBUG	07/25/2018 09:01:49 PM apscheduler.scheduler		Looking for jobs to run
+DEBUG	07/25/2018 09:01:49 PM apscheduler.scheduler		Next wakeup is due at 2018-07-26 01:01:49.823412+02:00 (in 14399.970839 seconds)
+DEBUG	07/25/2018 09:01:49 PM wsrv.py		Serving on port 8080...
+DEBUG	07/25/2018 09:02:07 PM wsrv.py		Shut down command received
+INFO	07/25/2018 09:02:07 PM apscheduler.scheduler		Scheduler has been shut down
+DEBUG	07/25/2018 09:02:07 PM apscheduler.scheduler		Looking for jobs to run
+DEBUG	07/25/2018 09:02:07 PM apscheduler.scheduler		No jobs; waiting until a job is added

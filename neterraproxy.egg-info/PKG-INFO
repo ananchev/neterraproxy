@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: neterraproxy
+Version: 0.0.1
+Summary: A python version of the neterra proxy java app written by @sgloutnikov
+Home-page: https://github.com/ananchev/neterraproxy
+Author: Anton Nanchev
+Author-email: ananchev@gmail.com
+License: UNKNOWN
+Description: # Example Package
+        
+        This is a python version of the neterra proxy java app written by @sgloutnikov.
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 2
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown

@@ -24,16 +24,15 @@ from bs4 import BeautifulSoup
 
 class NeterraProxy(object):
 
-    def __init__(self):
+    def __init__(self, script_dir):
         self.username = "ananchev"
         self.password = "7C8UCskhbt8Gdvd4OCKc"
         #self.cookieJar = cookielib.CookieJar()
         self.session = requests.Session()
         self.expireTime = 0
         #client 
-        import os
-        self.script_dir = os.path.dirname(os.path.abspath(__file__))
-        self.channelsJson = json.load(open(self.script_dir + '/channels.json'))
+        self.script_dir = script_dir
+        self.channelsJson = json.load(open(script_dir + '/channels.json'))
 
         
     def checkAuthentication(self):

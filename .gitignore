@@ -2,3 +2,5 @@ downloadepg.pyc
 neterra.pyc
 wsrv.pyc
 .vscode/settings.json
+test.py
+neterra.log

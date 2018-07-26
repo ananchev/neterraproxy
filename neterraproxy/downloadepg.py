@@ -13,9 +13,9 @@ import logging
 logger = logging.getLogger("downloadepg.py")
 
 class EPGDownloader:
-    def __init__(self):
+    def __init__(self, script_dir):
         logging.info("EPG downloader initialised: {0}".format(str(datetime.now())))
-        self.script_dir = os.path.dirname(os.path.abspath(__file__))
+        self.script_dir = script_dir
         self.url = "http://epg.kodibg.org/dl.php"
         self.filename = "epg"
 
