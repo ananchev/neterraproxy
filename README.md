@@ -15,23 +15,23 @@ The application has a built-in scheduler that downloads an XMLTV file with the p
 
 ## Instructions
 1) Install the Python package **pip install neterraproxy**. 
-2) Start the application with **python -m neterraproxy *your_Nettera.tv_username* *your_Nettera.tv_password* *the_proxy_data_directory***
-    * Active subscription for Nettera.tv is required for the provided above user.
+2) Start the application with **python -m neterraproxy *your_nettera_username* *your_nettera_password* *the_proxy_data_directory***
+    * Active subscription for [nettera.tv](https://neterra.tv/) is required for the provided above user.
     * The script data directory is used to store the proxy log file and the xmltv epg file.
-3) Leave the proxy application running. **Ctrl + C** will terminate NeterraProxy.
-4) Use the following URL to connect NeterraProxy with your favorite IPTV player:
+3) Leave the proxy application running in the terminal. **Ctrl + C** will terminate NeterraProxy.
+4) Use the following URLs to connect NeterraProxy with your favorite IPTV player:
     * Playlist URL: http://localhost:8080/playlist.m3u8
     * EPG URL: http://localhost:8080/epg.xml
 
 ## Run as Linux Service
 1) Install the package as per the instruction above
 2) Download the netteraproxy.service unit file from [here](https://github.com/ananchev/neterraproxy/blob/master/neterraproxy.service)
-3) Edit the file and provide your username, password and data directory in the line **Environment='ARGUMENTS=-m neterraproxy *neterra_username* *neterra_password* *data_directory*'**
+3) Edit the file and provide your username, password and data directory in the line **Environment='ARGUMENTS=-m neterraproxy *your_neterra_username* *your_neterra_password* *the_proxy_data_directory*'**
 4) Copy the unit file in __/lib/systemd/system__
 5) Start the service with **sudo systemctl start neterraproxy.service**
 6) Check the status with **sudo systemctl status neterraproxy.service** and verify the proxy functions properly 
 7) Enable the service to start with the OS **sudo systemctl enable neterraproxy.service**
 
 ## Acknowledgements
-@sgloutnikov for his Java proxy and the answers to my stupid during the development of the Python version
-[Kodi Fan Forum BG](https://kodibg.org/forum/) for collecting and hosting the XMLTV EPG file 
+* @sgloutnikov for his Java proxy and the answers during the development of the Python version
+* [Kodi Fan Forum BG](https://kodibg.org/forum/) for collecting and hosting the XMLTV EPG file 
