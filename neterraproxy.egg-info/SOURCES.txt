@@ -10,4 +10,5 @@ neterraproxy/wsrv.py
 neterraproxy.egg-info/PKG-INFO
 neterraproxy.egg-info/SOURCES.txt
 neterraproxy.egg-info/dependency_links.txt
+neterraproxy.egg-info/requires.txt
 neterraproxy.egg-info/top_level.txt

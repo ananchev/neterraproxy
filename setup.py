@@ -14,10 +14,10 @@ setuptools.setup(
     url="https://github.com/ananchev/neterraproxy",
     packages=setuptools.find_packages(),
     install_requires=[
-        requests,
-        bs4,
-        apscheduler
-    ]
+        'requests',
+        'bs4',
+        'apscheduler'
+    ],
     include_package_data=True,
     classifiers=(
         "Programming Language :: Python :: 2",

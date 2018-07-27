@@ -14,13 +14,12 @@ NeterraProxy generates a specialized playlist that points to itself rather than 
 The application has a built-in scheduler that downloads an XMLTV file with the program guides for the most of the offered by Neterra.tv channels. The scheduler runs every 4 hours. Please note that the application does not perform the download on start - you need to keep it running for 4 hours. The xmltv file is downloaded in the specified data directory (see the section Instructions).
 
 ## Instructions
-1) Download the latest Python package from the [dist](https://github.com/ananchev/neterraproxy/tree/master/dist) directory. 
-2) Install the package using pip install /path/to/the/tar.gz/file.
-3) Start the application with **python -m neterraproxy *your Nettera.tv username* *your Netter.tv password* *the proxy data directory***
+1) Install the Python package **pip install neterraproxy**. 
+2) Start the application with **python -m neterraproxy *your Nettera.tv username* *your Netter.tv password* *the proxy data directory***
     * Active subscription for Nettera.tv is required for the provided above user.
     * The script data directory is used to store the proxy log file and the xmltv epg file.
-4) Leave the proxy application running. **Ctrl + C** will terminate NeterraProxy.
-6) Use the following URL to connect NeterraProxy with your favorite IPTV player:
+3) Leave the proxy application running. **Ctrl + C** will terminate NeterraProxy.
+4) Use the following URL to connect NeterraProxy with your favorite IPTV player:
     * Playlist URL: http://localhost:8080/playlist.m3u8
     * EPG URL: http://localhost:8080/epg.xml
 
