@@ -15,7 +15,7 @@ The application has a built-in scheduler that downloads an XMLTV file with the p
 
 ## Instructions
 1) Install the Python package **pip install neterraproxy**. 
-2) Start the application with **python -m neterraproxy *your Nettera.tv username* *your Netter.tv password* *the proxy data directory***
+2) Start the application with **python -m neterraproxy *your_Nettera.tv_username* *your_Nettera.tv_password* *the_proxy_data_directory***
     * Active subscription for Nettera.tv is required for the provided above user.
     * The script data directory is used to store the proxy log file and the xmltv epg file.
 3) Leave the proxy application running. **Ctrl + C** will terminate NeterraProxy.
