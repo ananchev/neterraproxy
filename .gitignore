@@ -1,6 +1,7 @@
-downloadepg.pyc
-neterra.pyc
-wsrv.pyc
+*.pyc
 .vscode/settings.json
 test.py
-neterra.lo
+neterra.log
+/dist/
+/*.egg-info
+/*.egg
