@@ -6,9 +6,6 @@ import os
 #logpath = os.path.join(expanduser("~"), r"neterra.log")
 #script_dir = os.path.dirname(os.path.abspath(__file__))
 
-import logging
-logger = logging.getLogger("wsrv.py")
-
 from urlparse import parse_qs
 import neterra
 import downloadepg
