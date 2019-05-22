@@ -51,6 +51,7 @@ class NeterraProxy(object):
         try:
             r = self.session.get(url)
             soup = BeautifulSoup(r.content, 'html.parser')
+            logger.info(soup)
             element = soup.find(attrs={"name" : "_token"})
             token = element["value"]
         except requests.exceptions.RequestException as err:
@@ -62,7 +63,7 @@ class NeterraProxy(object):
                     "_token": token}
         try:
             r2 = self.session.post(url, data = formBody)
-            logged = "account.png" in r2.content
+            logged = self.username in r2.content
         except requests.exceptions.RequestException as err:
             logger.exception("message")
             sys.exit(1)   
