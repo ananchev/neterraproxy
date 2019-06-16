@@ -42,5 +42,5 @@ class EPGDownloader:
 if __name__ == "__main__":
     print ("go go go")
     d = EPGDownloader()
-    print d.script_dir
+    print (d.script_dir)
     d.extract()
