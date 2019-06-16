@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="neterraproxy",
-    version="0.0.3",
+    version="0.0.4",
     author="Anton Nanchev",
     author_email="ananchev@gmail.com",
     description="A python version of the neterra proxy java app written by @sgloutnikov",

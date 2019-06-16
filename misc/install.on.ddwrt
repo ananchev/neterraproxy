@@ -1,3 +1,9 @@
+[16 Jun 2019] File is now outdated as code has been upgraded for python3. 
+I have not explored if if and how python3 could run on DD-WRT.
+
+
+Following are some notes how to install on a router running DD-WRT firmware
+
 1. Install entware and the opkg package manager
 2. Install python
 3. Install from source (python setup.py install)
