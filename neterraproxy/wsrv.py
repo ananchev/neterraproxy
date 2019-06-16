@@ -6,9 +6,12 @@ import os
 #logpath = os.path.join(expanduser("~"), r"neterra.log")
 #script_dir = os.path.dirname(os.path.abspath(__file__))
 
-from urlparse import parse_qs
+from urllib.parse import parse_qs
 import neterra
 import downloadepg
+
+import logging
+logger = logging.getLogger(__name__)
 
 class Wsrv:
     def __call__(self, environ, start_response):
@@ -45,9 +48,16 @@ class NeterraMiddlware:
         
         if call in ['epg.xml']:
             logging.info('serving EPG')
-            h = open(self.net.app_dir + "/epg.xml")
-            response= h.read()
-            h.close()
+            
+            # h = open(self.net.app_dir + "/epg.xml")
+            # response= h.read()
+            # h.close()
+
+            response = b''
+            filename = self.net.app_dir + "/epg.xml"
+            with open(filename, 'rb', buffering=0) as f:
+                response= f.readall()
+
             status = '200 OK'
             response_headers =[('content-type', 'application/xml')]
             #response_headers= [('Content-type', 'application/xml'),('Location', 'http://epg.kodibg.org/dl.php')]
@@ -69,12 +79,13 @@ class NeterraMiddlware:
                     # response = ""     
                     # response_headers = [('Content-Type', 'application/x-mpegURL'),('Location', 'http://www.dir.bg')
                 else:
-                    error = 'Failed to login. Check username and password.'
+                    error = b'Failed to login. Check username and password.'
                     logger.info(error)
                     print (error)
                     status = '200 OK'
                     response = error 
-                    response_headers = [('Content-Type', 'text/plain'),('Content-Length', str(len(response)))]
+                    response_headers = [('Content-Type', "text/plain"),('Content-Length', str(len(response)))]
+                    #response_headers = [('Content-Type', "text/plain"),('Content-Length', '50'.encode())]
             else:
                 param_dict = parse_qs(query)
                 ch = param_dict.get('ch', [''])[0]  #Returns channel id
@@ -83,14 +94,16 @@ class NeterraMiddlware:
                 #logger.info(('serving stream of channel \"{0}\" with id:\"{2}. The link is: \"{1}\".').format(chn, chlink, ch)) 
                 print(chlink)
                 status = '302 Found'                
-                response = ""     
+                response = b""     
                 response_headers = [('Content-Type', 'application/x-mpegURL'),('Location', str(chlink))]
                 # status = '200 OK'
                 # response = 'the link to play channel {0} is \"{1}\".'.format(chn, chlink) 
                 # response_headers = [('Content-Type', 'text/plain'),('Content-Length', str(len(response)))]
         else:
-            response='return error for wrong call here'
-            logger.debug('server was called with wrong argument: {0}'.format(environ['PATH_INFO']))
+            response=b'return error for wrong call here'
+            error = 'server was called with wrong argument: {0}'.format(environ['PATH_INFO'])
+            logger.debug(error)
+            print (error)
             status = '200 OK'
             response_headers = [('Content-Type', 'text/plain'),('Content-Length', str(len(response)))]
 
