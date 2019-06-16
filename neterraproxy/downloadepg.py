@@ -4,6 +4,7 @@ import gzip
 import os
 from datetime import datetime
 import time
+import sys
 
 #to disable warnings related to https certificates verification
 import urllib3
@@ -27,7 +28,7 @@ class EPGDownloader:
                 f.write(r.content)
                 f.close()
         except requests.exceptions.RequestException as err:
-            print(exception("message"))
+            print(err("message"))
             sys.exit(1)
 
     def extract(self):

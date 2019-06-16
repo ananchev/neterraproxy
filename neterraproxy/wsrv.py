@@ -7,8 +7,8 @@ import os
 #script_dir = os.path.dirname(os.path.abspath(__file__))
 
 from urllib.parse import parse_qs
-import neterra
-import downloadepg
+import neterraproxy.neterra
+import neterraproxy.downloadepg
 
 import logging
 logger = logging.getLogger(__name__)
@@ -24,7 +24,7 @@ class NeterraMiddlware:
     def __init__(self, app, username, password, app_dir):
         self.app = app
         #script_dir = os.path.dirname(os.path.abspath(__file__))
-        self.net = neterra.NeterraProxy(username, password, app_dir)
+        self.net = neterraproxy.neterra.NeterraProxy(username, password, app_dir)
         #self.net.script_dir = self.script_dir = os.path.dirname(os.path.abspath(__file__))
        
 #     def __call__(self, environ, start_response):  #this is a method to output the whole environment dictionary   
@@ -118,7 +118,7 @@ def run(username, password, app_dir):
     logger = logging.getLogger("wsrv.py")
 
     try:
-        d = downloadepg.EPGDownloader(app_dir)
+        d = neterraproxy.downloadepg.EPGDownloader(app_dir)
         from apscheduler.schedulers.background import BackgroundScheduler
         scheduler = BackgroundScheduler()
         scheduler.add_job(d.extract, 'interval', hours=4)
