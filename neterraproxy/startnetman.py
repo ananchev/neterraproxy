@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-import wsrv
+import neterraproxy.wsrv
 import argparse
 
 parser = argparse.ArgumentParser()
@@ -14,4 +14,4 @@ password = getattr(args, "password")
 app_dir = getattr(args,"app_dir")
 
 
-wsrv.run(username, password, app_dir)
+neterraproxy.wsrv.run(username, password, app_dir)
