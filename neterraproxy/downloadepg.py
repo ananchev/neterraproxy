@@ -1,6 +1,7 @@
 import requests
 import re
 import gzip
+import shutil
 import os
 from datetime import datetime
 import time
@@ -24,8 +25,8 @@ class EPGDownloader:
         try:
             logging.info("download started: {0}".format(str(datetime.now())))
             r = requests.get(self.url, allow_redirects=True)
-            with open(self.script_dir + "/" + self.filename + ".xml.gz", "w") as f:
-                f.write(r.content)
+            with open(self.script_dir + "/" + self.filename + ".xml.gz", "wb") as f:
+                f.write(r.content) #tuk
                 f.close()
         except requests.exceptions.RequestException as err:
             print(err("message"))
@@ -33,15 +34,15 @@ class EPGDownloader:
 
     def extract(self):
         self.__donwload()
-        f = gzip.open(self.script_dir + "/" + self.filename + ".xml.gz", 'rb')
-        file_content = f.read()
-        f.close()
-        with open(self.script_dir + "/" + self.filename + ".xml", "w") as f:
-            f.write(file_content)
-            f.close()
+        epgGZipped = self.script_dir + "/" + self.filename + ".xml.gz"
+        epg = self.script_dir + "/" + self.filename + ".xml"
+
+        with gzip.open(epgGZipped, 'rb') as f_in:
+             with open(epg, 'wb') as f_out:
+                shutil.copyfileobj(f_in, f_out)
 
 if __name__ == "__main__":
     print ("go go go")
-    d = EPGDownloader()
+    d = EPGDownloader('/home/ananchev')
     print (d.script_dir)
     d.extract()
