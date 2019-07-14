@@ -7,11 +7,11 @@
       "logo": "http://logos.kodibg.org/bnt1.png"
     },
     "100361": {
-      "name": "БНТ HD",
-      "tvg-id": "BNTHD",
-      "tvg-name": "BNTHD",
+      "name": "БНТ 3",
+      "tvg-id": "BNT3",
+      "tvg-name": "BNT3",
       "group": "Политематични",
-      "logo": "http://logos.kodibg.org/bnthd.png"
+      "logo": "http://logos.kodibg.org/bnt3.png"
     },
     "100227": {
       "name": "БНТ 2",
@@ -21,11 +21,11 @@
       "logo": "http://logos.kodibg.org/bnt2.png"
     },
     "100169": {
-      "name": "БНТ Свят",
-      "tvg-id": "BNTWorld",
-      "tvg-name": "BNTWorld",
+      "name": "БНТ 4",
+      "tvg-id": "BNT4",
+      "tvg-name": "BNT4",
       "group": "Политематични",
-      "logo": "http://logos.kodibg.org/bntworld.png"
+      "logo": "http://logos.kodibg.org/bnt4.png"
     },
     "100183": {
       "name": "Нова ТВ",
@@ -214,7 +214,7 @@
       "tvg-id": "tveurope",
       "tvg-name": "tveurope",
       "group": "Новинарски",
-      "logo": "http://logos.kodibg.org/tveuropa.png"
+      "logo": "http://logos.kodibg.org/tveurope.png"
     },
     "100157": {
       "name": "Bulgaria On Air",
@@ -446,6 +446,96 @@
       "tvg-name": "bTVAction",
       "group": "Филмови",
       "logo": "http://logos.kodibg.org/btvaction.png"
-    }
-    
+    },
+    "100909": {
+      "name": "Българе HD",
+      "tvg-id": "BULGARE",
+      "tvg-name": "BULGARE",
+      "group": "Политематични",
+      "logo": "http://logos.kodibg.org/bulgare.png"
+    },
+    "100542": {
+      "name": "English Club",
+      "tvg-id": "EnglishClubTV",
+      "tvg-name": "EnglishClubTV",
+      "group": "Политематични",
+      "logo": "http://logos.kodibg.org/englishclubtv.png"
+    },
+    "100543": {
+      "name": "The World",
+      "tvg-id": "TheWorld",
+      "tvg-name": "TheWorld",
+      "group": "Политематични",
+      "logo": "http://logos.kodibg.org/theworld.png"
+    },
+    "100809": {
+      "name": "B1B Action",
+      "tvg-id": "B1BActionTV",
+      "tvg-name": "B1BActionTV",
+      "group": "Политематични",
+      "logo": "http://logos.kodibg.org/b1bactiontv.png"
+    },
+    "100519": {
+      "name": "Первый канал России",
+      "tvg-id": "PerviyKanal",
+      "tvg-name": "PerviyKanal",
+      "group": "Политематични",
+      "logo": "http://logos.kodibg.org/perviykanal.png"
+    },
+    "100803": {
+      "name": "CNN",
+      "tvg-id": "CNN",
+      "tvg-name": "CNN",
+      "group": "Новинарски",
+      "logo": "http://logos.kodibg.org/cnn.png"
+    },
+    "100804": {
+      "name": "BBC",
+      "tvg-id": "BBC1",
+      "tvg-name": "BBC1",
+      "group": "Новинарски",
+      "logo": "http://logos.kodibg.org/bbc1.png"
+    },
+    "100798": {
+      "name": "БСТВ",
+      "tvg-id": "BSTV",
+      "tvg-name": "BSTV",
+      "group": "Политематични",
+      "logo": "http://logos.kodibg.org/bstv.png"
+    },
+    "100922": {
+      "name": "Alfa",
+      "tvg-id": "Alfa",
+      "tvg-name": "Alfa",
+      "group": "Политематични",
+      "logo": "http://logos.kodibg.org/alfa.png"
+    },
+    "101074": {
+      "name": "Телевизия Шумен",
+      "tvg-id": "Shumen",
+      "tvg-name": "Shumen",
+      "group": "Политематични",
+      "logo": "http://logos.kodibg.org/tvshumen.png"
+    },
+    "1648": {
+      "name": "Дартс ТВ",
+      "tvg-id": "TVDarts",
+      "tvg-name": "TVDarts",
+      "group": "Политематични",
+      "logo": "http://logos.kodibg.org/tvdarts.png"
+    },
+    "100414": {
+      "name": "MMTV",
+      "tvg-id": "MMTV",
+      "tvg-name": "MMTV",
+      "group": "Музикални",
+      "logo": "http://logos.kodibg.org/mmtv.png"
+    },
+    "100392": {
+      "name": "EuroFolkTV",
+      "tvg-id": "EuroFolk",
+      "tvg-name": "EuroFolk",
+      "group": "Музикални",
+      "logo": "http://logos.kodibg.org/eurofolktv.png",
+    },
   }
