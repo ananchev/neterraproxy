@@ -1,0 +1,28 @@
+# Service file to run on libreelec,
+# make sure to update paths as well as username & password before use.
+# Copy to /storage/.config/system.d and enable via systemctl 
+#
+[Unit]
+Description=Neterra proxy service on Docker 
+Requires=service.system.docker.service
+After=service.system.docker.service
+Before=kodi.service
+
+[Service]
+Restart=always
+RestartSec=10s
+TimeoutStartSec=0
+ExecStartPre=-/bin/sh -c "mkdir -p <local_neterra_folder>"
+ExecStart=/storage/.kodi/addons/service.system.docker/bin/docker -H 0.0.0.0:2375 run \
+	--name=neterraproxy \
+	--rm \
+	--volume=<local_neterra_folder>:/usr/local/lib/neterraproxy \
+	--publish=8081:8080 \
+	--env=DATADIR=/usr/local/lib/neterraproxy \
+	--env=USER=<neterra_username> \
+	--env=PASSWORD=<neterra_password> \
+	neterraproxy
+ExecStop=/storage/.kodi/addons/service.system.docker/bin/docker -H 0.0.0.0:2375 stop neterraproxy
+
+[Install]
+WantedBy=multi-user.target

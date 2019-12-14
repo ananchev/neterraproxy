@@ -1,11 +1,12 @@
 import setuptools
+from distutils.core import setup
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
     name="neterraproxy",
-    version="0.1.2",
+    version="0.2.3",
     author="Anton Nanchev",
     author_email="ananchev@gmail.com",
     description="A python version of the neterra proxy java app written by @sgloutnikov",

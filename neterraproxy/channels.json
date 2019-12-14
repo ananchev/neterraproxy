@@ -221,7 +221,7 @@
       "tvg-id": "BulgariaOnAir",
       "tvg-name": "BulgariaOnAir",
       "group": "Политематични",
-      "logo": "http://logos.kodibg.org/bgonair.png"
+      "logo": "http://logos.kodibg.org/bulgariaonair.png"
     },
     "100181": {
       "name": "Канал 3",
@@ -354,7 +354,7 @@
       "tvg-id": "Eurocom",
       "tvg-name": "Eurocom",
       "group": "Политематични",
-      "logo": "http://logos.kodibg.org/evrokom.png"
+      "logo": "http://logos.kodibg.org/eurocom.png"
     },
     "100372": {
       "name": "ТВ Варна",
@@ -494,7 +494,7 @@
       "tvg-id": "BBC1",
       "tvg-name": "BBC1",
       "group": "Новинарски",
-      "logo": "http://logos.kodibg.org/bbc1.png"
+      "logo": "http://logos.kodibg.org/bbcone.png"
     },
     "100798": {
       "name": "БСТВ",
@@ -536,6 +536,69 @@
       "tvg-id": "EuroFolk",
       "tvg-name": "EuroFolk",
       "group": "Музикални",
-      "logo": "http://logos.kodibg.org/eurofolktv.png",
+      "logo": "http://logos.kodibg.org/eurofolktv.png"
     },
+    "100642": {
+      "name": "MAX Sport 1",
+      "tvg-id": "MAXSport1",
+      "tvg-name": "MAXSport1",
+      "group": "Спортни",
+      "logo": "http://logos.kodibg.org/maxsport1.png"
+    },
+    "100643": {
+      "name": "MAX Sport 2",
+      "tvg-id": "MAXSport2",
+      "tvg-name": "MAXSport2",
+      "group": "Спортни",
+      "logo": "http://logos.kodibg.org/maxsport2.png"
+    },
+    "100734": {
+      "name": "MAX Sport 3",
+      "tvg-id": "MAXSport3",
+      "tvg-name": "MAXSport3",
+      "group": "Спортни",
+      "logo": "http://logos.kodibg.org/maxsport3.png"
+    },
+    "100824": {
+      "name": "MAX Sport 4",
+      "tvg-id": "MAXSport4",
+      "tvg-name": "MAXSport4",
+      "group": "Спортни",
+      "logo": "http://logos.kodibg.org/maxsport4.png"
+    },
+    "101218": {
+      "name": "7/8 TV",
+      "tvg-id": "78TV",
+      "tvg-name": "78TV",
+      "group": "Политематични",
+      "logo": "http://logos.kodibg.org/78tv.png"
+    },
+    "100993": {
+      "name": "Code Fashion",
+      "tvg-id": "CodeFashion",
+      "tvg-name": "CodeFashion",
+      "group": "Политематични",
+      "logo": "http://logos.kodibg.org/codefashion.png"
+    },
+    "100641": {
+      "name": "БНР",
+      "tvg-id": "BNRHorizont",
+      "tvg-name": "BNRHorizont",
+      "group": "Радио",
+      "logo": "http://logos.kodibg.org/bnrhorizont.png"
+    },
+    "100675": {
+      "name": "УЛТРА",
+      "tvg-id": "",
+      "tvg-name": "",
+      "group": "Радио",
+      "logo": "https://assets.neterra.tv/media/ultra.png"
+    },
+    "100676": {
+      "name": "Вега+",
+      "tvg-id": "",
+      "tvg-name": "",
+      "group": "Радио",
+      "logo": "https://assets.neterra.tv/media/vega.png"
+    }
   }

@@ -7,8 +7,13 @@ import os
 #script_dir = os.path.dirname(os.path.abspath(__file__))
 
 from urllib.parse import parse_qs
-import neterraproxy.neterra
-import neterraproxy.downloadepg
+from neterraproxy.neterra import NeterraProxy
+from neterraproxy.downloadepg import EPGDownloader
+
+##lines below are for dev purpose only
+# from neterra import NeterraProxy
+# from downloadepg import EPGDownloader
+
 
 import logging
 logger = logging.getLogger(__name__)
@@ -23,45 +28,35 @@ class NeterraMiddlware:
     
     def __init__(self, app, username, password, app_dir):
         self.app = app
-        #script_dir = os.path.dirname(os.path.abspath(__file__))
-        self.net = neterraproxy.neterra.NeterraProxy(username, password, app_dir)
-        #self.net.script_dir = self.script_dir = os.path.dirname(os.path.abspath(__file__))
-       
-#     def __call__(self, environ, start_response):  #this is a method to output the whole environment dictionary   
-#         # Sorting and stringifying the environment key, value pairs
-#         response_body = [
-#             '%s: %s' % (key, value) for key, value in sorted(environ.items())
-#         ]
-#         response_body = '\n'.join(response_body)
-#     
-#         status = '200 OK'
-#         response_headers = [
-#             ('Content-Type', 'text/plain'),
-#             ('Content-Length', str(len(response_body)))
-#         ]
-#         start_response(status, response_headers)
-#     
-#         return [response_body]
+        self.net = NeterraProxy(username, password, app_dir)
 
     def __call__(self, environ, start_response):
         call = environ['PATH_INFO'][1:] #without the first char (/)
         
         if call in ['epg.xml']:
             logging.info('serving EPG')
-            
-            # h = open(self.net.app_dir + "/epg.xml")
-            # response= h.read()
-            # h.close()
-
             response = b''
             filename = self.net.app_dir + "/epg.xml"
             with open(filename, 'rb', buffering=0) as f:
                 response= f.readall()
-
             status = '200 OK'
             response_headers =[('content-type', 'application/xml')]
-            #response_headers= [('Content-type', 'application/xml'),('Location', 'http://epg.kodibg.org/dl.php')]
-            
+
+        elif call in ['neterralinks.m3u8']:
+            if self.net.authenticate2():
+                logging.info('serving playlist with direct links')
+                status = '200 OK'
+                self.net.host = environ['HTTP_HOST']
+                response = self.net.getM3U82(False)
+                response_headers = [('Content-Type', 'application/x-mpegURL'),\
+                                    ('Content-Disposition', 'attachment; filename=\"neterralinks.m3u8\"')]
+            else:
+                error = b'Failed to login. Check username and password.'
+                logger.error(error)
+                status = '200 OK'
+                response = error 
+                response_headers = [('Content-Type', "text/plain"),('Content-Length', str(len(response)))]                            
+        
         elif call in ['playlist.m3u8']:
             query = environ['QUERY_STRING']
             #provide the server address to the neterra instance as they will be needed for the link generation
@@ -118,7 +113,10 @@ def run(username, password, app_dir):
     logger = logging.getLogger("wsrv.py")
 
     try:
-        d = neterraproxy.downloadepg.EPGDownloader(app_dir)
+        d = EPGDownloader(app_dir)
+        #download epg on first run
+        d.extract()
+        #initialise background scheduler to download new EPG every 4 hrs
         from apscheduler.schedulers.background import BackgroundScheduler
         scheduler = BackgroundScheduler()
         scheduler.add_job(d.extract, 'interval', hours=4)

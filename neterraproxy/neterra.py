@@ -15,7 +15,7 @@ import urllib3
 urllib3.disable_warnings()
 
 from wsgiref.simple_server import make_server
-from cgi import parse_qs, escape
+#from cgi import parse_qs, escape
 
 from bs4 import BeautifulSoup
 
@@ -26,15 +26,11 @@ class NeterraProxy(object):
     def __init__(self, username, password, app_dir):
         self.username = username
         self.password = password
-        #self.cookieJar = cookielib.CookieJar()
         self.session = requests.Session()
         self.expireTime = 0
         self.app_dir = app_dir
-        #client 
         script_dir = os.path.dirname(__file__)
         self.channelsJson = json.load(open(script_dir + '/channels.json'))
-    
-
         
     def checkAuthentication(self):
         now = int(time.time() * 1000)
@@ -75,7 +71,8 @@ class NeterraProxy(object):
             self.expiretime = int(time.time() * 1000) + 28800000
         return logged
     
-    def getM3U82(self):
+        
+    def getM3U82(self, linksToSelf = True):
         r = self.session.get('https://www.neterra.tv/live')
         soup = BeautifulSoup(r.content, 'html.parser')
         channelsPlaylistElement = soup.find("ul",{"class" : "playlist-items"})
@@ -101,10 +98,16 @@ class NeterraProxy(object):
                 group = ""
                 logo = ""
                 #print chanName + " : not found"
-            chdata = "#EXTINF:-1 tvg-id=\"{0}\" tvg-name=\"{1}\" tvg-logo=\"{2}\" group-title=\"{3}\", {4} \n " \
+            chdata = "#EXTINF:-1 tvg-id=\"{0}\" tvg-name=\"{1}\" tvg-logo=\"{2}\" group-title=\"{3}\", {4} \n" \
                             .format(tvgId, tvgName,logo, group, chanName)
-            link = "http://{0}/playlist.m3u8?ch={1}\n" \
-                            .format(self.host, chanId)
+            
+            if linksToSelf:
+                link = "http://{0}/playlist.m3u8?ch={1}\n" \
+                .format(self.host, chanId)
+            else:
+                link = self.getPlayLink2(chanId)+"\n"
+
+
             #sb.write(chdata.encode("utf-8"))
             sb.write(chdata)
             sb.write(link)     
