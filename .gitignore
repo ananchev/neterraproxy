@@ -1,7 +1,9 @@
 *.pyc
 .vscode/settings.json
-test.py
 neterra.log
 /dist/
+/build/
 /*.egg-info
 /*.egg
+*.jar
+/neterraproxy/*.html

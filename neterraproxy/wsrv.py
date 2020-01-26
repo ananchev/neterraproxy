@@ -7,12 +7,14 @@ import os
 #script_dir = os.path.dirname(os.path.abspath(__file__))
 
 from urllib.parse import parse_qs
+
+##below to be uncommented when building as module 
 from neterraproxy.neterra import NeterraProxy
 from neterraproxy.downloadepg import EPGDownloader
 
-##lines below are for dev purpose only
-# from neterra import NeterraProxy
-# from downloadepg import EPGDownloader
+##lines below are for dev purpose only - when using startnetman
+#from neterra import NeterraProxy
+#from downloadepg import EPGDownloader
 
 
 import logging
