@@ -6,4 +6,4 @@ neterra.log
 /*.egg-info
 /*.egg
 *.jar
-/neterraproxy/*.html
+/env
